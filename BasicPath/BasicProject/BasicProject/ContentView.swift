@@ -15,6 +15,7 @@ struct ContentView: View {
                 .foregroundColor(.accentColor)
             Text("Hello, world!")
             Text("First Project!")
+            Text("Enviar desde XCode")
         }
         .padding()
     }
