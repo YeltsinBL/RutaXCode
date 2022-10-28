@@ -17,7 +17,9 @@ struct ContentView: View {
             Text("First Project!")
             Text("Enviar desde XCode 2")
         }
+        .border(Color.red)
         .padding()
+        .border(Color.green)
     }
 }
 
