@@ -1,0 +1,6 @@
+# Xcode
+#
+# gitignore contributors: remember to update Global/Xcode.gitignore & Swift.gitignore
+
+## User settings
+xcuserdata/
