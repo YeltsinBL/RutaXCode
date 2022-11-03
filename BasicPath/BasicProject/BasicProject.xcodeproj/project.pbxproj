@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B3D5485291433B000DE6B49 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3D5484291433B000DE6B49 /* ImageView.swift */; };
 		3B6E7FE02908F9E800ED57AC /* BasicProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6E7FDF2908F9E800ED57AC /* BasicProjectApp.swift */; };
 		3B6E7FE22908F9E800ED57AC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6E7FE12908F9E800ED57AC /* ContentView.swift */; };
 		3B6E7FE42908F9E900ED57AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B6E7FE32908F9E900ED57AC /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B3D5484291433B000DE6B49 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		3B6E7FDC2908F9E800ED57AC /* BasicProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasicProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B6E7FDF2908F9E800ED57AC /* BasicProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicProjectApp.swift; sourceTree = "<group>"; };
 		3B6E7FE12908F9E800ED57AC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			children = (
 				3B6E7FDF2908F9E800ED57AC /* BasicProjectApp.swift */,
 				3B6E7FE12908F9E800ED57AC /* ContentView.swift */,
+				3B3D5484291433B000DE6B49 /* ImageView.swift */,
 				3B6E7FE32908F9E900ED57AC /* Assets.xcassets */,
 				3B6E7FE52908F9E900ED57AC /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B3D5485291433B000DE6B49 /* ImageView.swift in Sources */,
 				3B6E7FE22908F9E800ED57AC /* ContentView.swift in Sources */,
 				3B6E7FE02908F9E800ED57AC /* BasicProjectApp.swift in Sources */,
 			);
