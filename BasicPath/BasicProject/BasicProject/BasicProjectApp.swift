@@ -13,7 +13,8 @@ struct BasicProjectApp: App {
         WindowGroup {
 //          Lugar donde se define que pantalla comienza al momento de compilar la aplicación
 //            ContentView()
-            MainView()
+//            MainView()
+            ListView()
         }
     }
 }

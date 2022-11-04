@@ -17,6 +17,7 @@
 		3B6E7FE22908F9E800ED57AC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6E7FE12908F9E800ED57AC /* ContentView.swift */; };
 		3B6E7FE42908F9E900ED57AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B6E7FE32908F9E900ED57AC /* Assets.xcassets */; };
 		3B6E7FE72908F9E900ED57AC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B6E7FE62908F9E900ED57AC /* Preview Assets.xcassets */; };
+		3BD4949329157051008DC06A /* ListDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD4949229157051008DC06A /* ListDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		3B6E7FE12908F9E800ED57AC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3B6E7FE32908F9E900ED57AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B6E7FE62908F9E900ED57AC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3BD4949229157051008DC06A /* ListDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 				3B3D54882914D33900DE6B49 /* MainView.swift */,
 				3B3D548E2914DE6F00DE6B49 /* RowView.swift */,
 				3B3D54902914E3BA00DE6B49 /* ListView.swift */,
+				3BD4949229157051008DC06A /* ListDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				3B3D548F2914DE6F00DE6B49 /* RowView.swift in Sources */,
 				3B3D54872914C9B600DE6B49 /* MapView.swift in Sources */,
 				3B6E7FE22908F9E800ED57AC /* ContentView.swift in Sources */,
+				3BD4949329157051008DC06A /* ListDetailView.swift in Sources */,
 				3B3D54892914D33900DE6B49 /* MainView.swift in Sources */,
 				3B6E7FE02908F9E800ED57AC /* BasicProjectApp.swift in Sources */,
 			);
