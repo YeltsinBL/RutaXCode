@@ -24,13 +24,17 @@ struct RowView: View {
                     .font(.subheadline)
             }
             Spacer()
+//          Hacemos el if para que aparezca la estrella solo cuando es favorito
+            if programmer.favorite{
+                Image(systemName: "star.fill").foregroundColor(.yellow).padding(.trailing)
+            }
         }
     }
 }
 
 struct RowView_Previews: PreviewProvider {
     static var previews: some View {
-        RowView(programmer: Programmer(id: 1, name: "Yeltsin", languages: "Swift, Kotlin", avatar: Image(systemName: "person.fill")))
+        RowView(programmer: Programmer(id: 1, name: "Yeltsin", languages: "Swift, Kotlin", avatar: Image(systemName: "person.fill"), favorite: true))
             .previewLayout(.fixed(width: 400, height: 60))
     }
 }

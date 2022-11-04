@@ -13,4 +13,5 @@ struct Programmer {
     var name: String
     var languages: String
     var avatar : Image
+    var favorite: Bool //Agregar filtro por boolenano
 }
