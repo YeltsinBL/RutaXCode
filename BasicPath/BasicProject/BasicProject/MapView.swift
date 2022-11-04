@@ -16,7 +16,7 @@ struct MapView: UIViewRepresentable {
     /*var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }*/
-//  Agregamos la funcion makeUIView porque retorna una vista de UIKit
+//  Agregamos la función makeUIView porque retorna una vista de UIKit
     func makeUIView(context: Context) ->
 //  Cambiamos el "some View" por un MKMapView
 //    some UIView {
@@ -24,16 +24,16 @@ struct MapView: UIViewRepresentable {
 //      Retornamos el objeto MKMapView de UIKit
         MKMapView(frame: .zero)
     }
-//  Agregamos la funcion updateUIView porque actualizar/trabajar en este mapa
+//  Agregamos la función updateUIView para actualizar/trabajar en este mapa
     func updateUIView(_ uiView: MKMapView, context: Context) {
         let coordenadas =
         CLLocationCoordinate2D(latitude: -12.0431800, longitude: -77.0282400)
-//      Delimita la region que se quiere mostrar en el mapa en forma de grados
+//      Delimita la región que se quiere mostrar en el mapa en forma de grados
         let span =
         MKCoordinateSpan(latitudeDelta: 2, longitudeDelta: 2)
         let region =
         MKCoordinateRegion(center: coordenadas, span: span)
-//      Fijamos la region en el mapa 
+//      Fijamos la región en el mapa
         uiView.setRegion(region, animated: true)
         
     }

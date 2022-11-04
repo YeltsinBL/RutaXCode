@@ -11,7 +11,9 @@ import SwiftUI
 struct BasicProjectApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//          Lugar donde se define que pantalla comienza al momento de compilar la aplicación
+//            ContentView()
+            MainView()
         }
     }
 }

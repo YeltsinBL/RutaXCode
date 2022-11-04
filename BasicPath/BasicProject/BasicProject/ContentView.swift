@@ -16,7 +16,7 @@ struct ContentView: View {
                 .foregroundColor(.accentColor)
             Text("Hello, world!").font(.title)
             Text("First Project!")
-//          Empuja los elementos para ocupar lo maximo posible de la pantalla y los separa uniformemente
+//          Empuja los elementos para ocupar lo máximo posible de la pantalla y los separa uniformemente
             Spacer()
 //          Ordena los elementos de forma Horizontal
             HStack(alignment: .firstTextBaseline, spacing: 0){
@@ -55,7 +55,7 @@ struct ContentView: View {
             }
             Text("8")
             Text("9")
-//          Total máximo para crear elementos en un Stack es de 10, si se requiere agregar más, se deberá agregar un Stack adicional y en él agregar los demás  elementos necesarios
+//          Total máximo para crear elementos en un Stack es de 10, si se requiere agregar más, se deberá agregar un Stack adicional y en él agregar los demás elementos necesarios
             VStack{
                 Text("10")
                 Text("11")
