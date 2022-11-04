@@ -12,6 +12,10 @@ struct ListDetailView: View {
 //  Agregamos la estructura Programmer para que acepte datos de entra al hacer clic en el listado anterior
     var programmer: Programmer
     
+//  Agregamos una variable que sera la modificada para el estado favorito
+//  Una variable binding llega desde otra clase y puede ser modificada
+    @Binding var favorite: Bool
+    
     var body: some View {
         VStack{
             programmer.avatar.resizable()
@@ -19,7 +23,20 @@ struct ListDetailView: View {
                 .clipShape(Circle())
                 .overlay(Circle().stroke(Color.black, lineWidth: 5))
                 .shadow(color: .gray, radius: 5)
-            Text(programmer.name).font(.largeTitle)
+            HStack {
+                Text(programmer.name).font(.largeTitle)
+                Button{
+                    favorite.toggle()
+                } label: {
+                    if favorite {
+                        
+                        Image(systemName: "star.fill").foregroundColor(.yellow)
+                    }else {
+                        
+                        Image(systemName: "star").foregroundColor(.black)
+                    }
+                }
+            }
             Text(programmer.languages).font(.title)
             Spacer()
         }
@@ -28,6 +45,6 @@ struct ListDetailView: View {
 
 struct ListDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ListDetailView(programmer: Programmer(id: 1, name: "Yeltsin", languages: "Swift, Kotlin", avatar: Image(systemName: "person.fill"), favorite: true))
+        ListDetailView(programmer: Programmer(id: 1, name: "Yeltsin", languages: "Swift, Kotlin", avatar: Image(systemName: "person.fill"), favorite: true), favorite: .constant(false))
     }
 }
