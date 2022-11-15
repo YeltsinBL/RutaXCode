@@ -21,6 +21,9 @@
 		3BD2811D2922F13E0048C548 /* BindingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD2811C2922F13E0048C548 /* BindingView.swift */; };
 		3BD2811F292316DD0048C548 /* EnvironmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD2811E292316DD0048C548 /* EnvironmentView.swift */; };
 		3BD2812129231E4A0048C548 /* BiometricAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD2812029231E4A0048C548 /* BiometricAuthView.swift */; };
+		3BD28123292347250048C548 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD28122292347250048C548 /* WebView.swift */; };
+		3BD281252923498F0048C548 /* WebWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD281242923498F0048C548 /* WebWKWebView.swift */; };
+		3BD2812729234F380048C548 /* WebSafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD2812629234F380048C548 /* WebSafariView.swift */; };
 		3BD4949329157051008DC06A /* ListDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD4949229157051008DC06A /* ListDetailView.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +43,9 @@
 		3BD2811C2922F13E0048C548 /* BindingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingView.swift; sourceTree = "<group>"; };
 		3BD2811E292316DD0048C548 /* EnvironmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentView.swift; sourceTree = "<group>"; };
 		3BD2812029231E4A0048C548 /* BiometricAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuthView.swift; sourceTree = "<group>"; };
+		3BD28122292347250048C548 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		3BD281242923498F0048C548 /* WebWKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebWKWebView.swift; sourceTree = "<group>"; };
+		3BD2812629234F380048C548 /* WebSafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSafariView.swift; sourceTree = "<group>"; };
 		3BD4949229157051008DC06A /* ListDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,6 +71,9 @@
 				3B3D54902914E3BA00DE6B49 /* ListView.swift */,
 				3BD4949229157051008DC06A /* ListDetailView.swift */,
 				3BD2812029231E4A0048C548 /* BiometricAuthView.swift */,
+				3BD28122292347250048C548 /* WebView.swift */,
+				3BD281242923498F0048C548 /* WebWKWebView.swift */,
+				3BD2812629234F380048C548 /* WebSafariView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -202,11 +211,14 @@
 				3B3D548D2914DDBF00DE6B49 /* Programmer.swift in Sources */,
 				3B3D548F2914DE6F00DE6B49 /* RowView.swift in Sources */,
 				3B3D54872914C9B600DE6B49 /* MapView.swift in Sources */,
+				3BD281252923498F0048C548 /* WebWKWebView.swift in Sources */,
 				3B6E7FE22908F9E800ED57AC /* ContentView.swift in Sources */,
 				3BD2812129231E4A0048C548 /* BiometricAuthView.swift in Sources */,
 				3BD4949329157051008DC06A /* ListDetailView.swift in Sources */,
 				3B3D54892914D33900DE6B49 /* MainView.swift in Sources */,
+				3BD2812729234F380048C548 /* WebSafariView.swift in Sources */,
 				3B6E7FE02908F9E800ED57AC /* BasicProjectApp.swift in Sources */,
+				3BD28123292347250048C548 /* WebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,7 +15,8 @@ struct BasicProjectApp: App {
 //            ContentView()
 //            MainView()
 //            ListView()
-            BiometricAuthView()
+//            BiometricAuthView()
+            WebView()
         }
     }
 }
