@@ -14,7 +14,8 @@ struct BasicProjectApp: App {
 //          Lugar donde se define que pantalla comienza al momento de compilar la aplicación
 //            ContentView()
 //            MainView()
-            ListView()
+//            ListView()
+            BiometricAuthView()
         }
     }
 }

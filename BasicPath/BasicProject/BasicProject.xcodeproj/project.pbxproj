@@ -20,6 +20,7 @@
 		3BD2811B2922EED80048C548 /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD2811A2922EED80048C548 /* StateView.swift */; };
 		3BD2811D2922F13E0048C548 /* BindingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD2811C2922F13E0048C548 /* BindingView.swift */; };
 		3BD2811F292316DD0048C548 /* EnvironmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD2811E292316DD0048C548 /* EnvironmentView.swift */; };
+		3BD2812129231E4A0048C548 /* BiometricAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD2812029231E4A0048C548 /* BiometricAuthView.swift */; };
 		3BD4949329157051008DC06A /* ListDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD4949229157051008DC06A /* ListDetailView.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		3BD2811A2922EED80048C548 /* StateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateView.swift; sourceTree = "<group>"; };
 		3BD2811C2922F13E0048C548 /* BindingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingView.swift; sourceTree = "<group>"; };
 		3BD2811E292316DD0048C548 /* EnvironmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentView.swift; sourceTree = "<group>"; };
+		3BD2812029231E4A0048C548 /* BiometricAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuthView.swift; sourceTree = "<group>"; };
 		3BD4949229157051008DC06A /* ListDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,6 +64,7 @@
 				3B3D548E2914DE6F00DE6B49 /* RowView.swift */,
 				3B3D54902914E3BA00DE6B49 /* ListView.swift */,
 				3BD4949229157051008DC06A /* ListDetailView.swift */,
+				3BD2812029231E4A0048C548 /* BiometricAuthView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -93,8 +96,8 @@
 		3B6E7FDE2908F9E800ED57AC /* BasicProject */ = {
 			isa = PBXGroup;
 			children = (
-				3BD281192922EE7E0048C548 /* PropertyWrappers */,
 				3B6E7FDF2908F9E800ED57AC /* BasicProjectApp.swift */,
+				3BD281192922EE7E0048C548 /* PropertyWrappers */,
 				3B3D548B2914DD9500DE6B49 /* Data */,
 				3B3D548A2914DD4000DE6B49 /* Views */,
 				3B6E7FE32908F9E900ED57AC /* Assets.xcassets */,
@@ -200,6 +203,7 @@
 				3B3D548F2914DE6F00DE6B49 /* RowView.swift in Sources */,
 				3B3D54872914C9B600DE6B49 /* MapView.swift in Sources */,
 				3B6E7FE22908F9E800ED57AC /* ContentView.swift in Sources */,
+				3BD2812129231E4A0048C548 /* BiometricAuthView.swift in Sources */,
 				3BD4949329157051008DC06A /* ListDetailView.swift in Sources */,
 				3B3D54892914D33900DE6B49 /* MainView.swift in Sources */,
 				3B6E7FE02908F9E800ED57AC /* BasicProjectApp.swift in Sources */,
@@ -333,6 +337,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BasicProject/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Necesitas autenticarte mediante el sensor biometrico";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -361,6 +366,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BasicProject/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Necesitas autenticarte mediante el sensor biometrico";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
