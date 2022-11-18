@@ -36,24 +36,24 @@ En `MapView` agregamos un mapa a la vista y esto es lo que se hizo:
 Para que el mapa se visualice se debe de definir un tamaño.
 
 En `ListView` agregue un listado en el que se puede navegar entre pantallas y a la vez actualizar como filtrar por estado.
-- Fuera de la estructura de la vista:
--- Se creo una clase mutable `ObservableObject` para que se pueda actualizar su estado.
--- La propiedad de la clase debe estar publicando su valor para que se pueda interactuar con ella.
+* Fuera de la estructura de la vista:
+    * Se creo una clase mutable `ObservableObject` para que se pueda actualizar su estado.
+    * La propiedad de la clase debe estar publicando su valor para que se pueda interactuar con ella.
  
-- Dentro de la `estructura` pero fuera del Body:
--- Creamos una variable booleana con estado falso para que sea la que se pueda filtrar, el tipo de `Property Wrapper` es `State` porque solo se utilizara en esta vista.
--- Instanciamos  a la clase para el listado y agregamos `EnvironmentObject` para que se pueda acceder a los datos de la lista, debemos de asegurarnos que deba de haber datos por eso lo instanciamos en el preview.
--- Creamos una nueva lista pero utilizando el estado (activo y/o todos) para filtrar y lo agregamos.
+* Dentro de la `estructura` pero fuera del Body:
+    * Creamos una variable booleana con estado falso para que sea la que se pueda filtrar, el tipo de `Property Wrapper` es `State` porque solo se utilizara en esta vista.
+    * Instanciamos  a la clase para el listado y agregamos `EnvironmentObject` para que se pueda acceder a los datos de la lista, debemos de asegurarnos que deba de haber datos por eso lo instanciamos en el preview.
+    * Creamos una nueva lista pero utilizando el estado (activo y/o todos) para filtrar y lo agregamos.
 
-- Dentro del `body` de la estructura:
--- Agregamos la lista en un `NavigationView` para dar la funcionalidad de navegar haciendo clic en la lista.
--- Agregamos el Toggle para que sea quien filtre por el estado, el estado que recibe debe ser mutable para que acepte cambios, se le agrega al inicio el "$" para que acepte el valor.
--- A la lista le agregamos un array en la cual indicamos cual es la ruta clave (id) para que los agregue uno a uno cuantas veces sea necesario.
--- Agregamos el `RowView` dentro del `NavigationLink` donde se pone la vista a donde queremos ir.
--- Agregamos de la lista mutable y el estado para actualizar el valor
+* Dentro del `body` de la estructura:
+    * Agregamos la lista en un `NavigationView` para dar la funcionalidad de navegar haciendo clic en la lista.
+    * Agregamos el Toggle para que sea quien filtre por el estado, el estado que recibe debe ser mutable para que acepte cambios, se le agrega al inicio el "$" para que acepte el valor.
+    * A la lista le agregamos un array en la cual indicamos cual es la ruta clave (id) para que los agregue uno a uno cuantas veces sea necesario.
+    * Agregamos el `RowView` dentro del `NavigationLink` donde se pone la vista a donde queremos ir.
+    * Agregamos de la lista mutable y el estado para actualizar el valor
 
-- En el `preview` agregamos:
--- Un `EnvironmentObject` para poder pasar los datos hacia la vista de `RowView`.
+* En el `preview` agregamos:
+    * Un `EnvironmentObject` para poder pasar los datos hacia la vista de `RowView`.
 
 En `RowView`, diseñamos la vista de la lista:
 - Dentro del body:
