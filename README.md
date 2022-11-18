@@ -56,29 +56,29 @@ En `ListView` agregue un listado en el que se puede navegar entre pantallas y a 
     * Un `EnvironmentObject` para poder pasar los datos hacia la vista de `RowView`.
 
 En `RowView`, diseñamos la vista de la lista:
-- Dentro del body:
--- Agregamos un if para que interactúe con el el filtro por medio del estado.
-- Dentro del previews:
--- Agregamos los datos que recibirá la vista.
+* Dentro del body:
+    * Agregamos un if para que interactúe con el el filtro por medio del estado.
+* Dentro del previews:
+    * Agregamos los datos que recibirá la vista.
 
 En `ListDetailView` 
-- Dentro de la estructura pero fuera del body:
--- Agregamos la estructura de la clase para que acepte datos de entrada al hacer clic en el listado anterior.
--- Agregamos una variable que será la modificada para el estado, la variable contiene una PropertyWrappers `Binding` que llega el valor desde otra vista y puede ser modificada.
-- Dentro del previews:
--- Agregamos los datos que recibirá  la vista.
+* Dentro de la estructura pero fuera del body:
+    * Agregamos la estructura de la clase para que acepte datos de entrada al hacer clic en el listado anterior.
+    * Agregamos una variable que será la modificada para el estado, la variable contiene una PropertyWrappers `Binding` que llega el valor desde otra vista y puede ser modificada.
+* Dentro del previews:
+    * Agregamos los datos que recibirá  la vista.
 
 > Nota: Si no se agrega la información  que se va a pasar en el preview, mostrara error y no funcionara.
 
 ## Importante
 ### Property Wrappers
 Los property wrappers utilizados en el listado para pasar datos a otra vista, actualizar y filtrar; fueron los siguientes:
-- @State: cuando el valor se va a actualizar solo en la vista que a sido definida.
-- @Binding: almacena y actualiza el valor de una variable que no a sido creada en la vista actual.
-- @StateObject: tiene la misma funcionalidad que el State pero se utiliza con datos más  complejos.
-- @ObservedObject: tiene la misma funcionalidad que el Binding pero se utiliza con datos más  complejos.
-- @EnvironmentObject: tiene la misma funcionalidad que el ObservedObject pero se utiliza para enviar datos a mas de 2 vistas, podemos acceder desde cualquier parte de la aplicación  desde que se propaga
--- Tener en cuenta que el programa asume que se le ha asignado el `EnvironmentObject` por lo cual aparecerá  error hasta que se asigne.
+* @State: cuando el valor se va a actualizar solo en la vista que a sido definida.
+* @Binding: almacena y actualiza el valor de una variable que no a sido creada en la vista actual.
+* @StateObject: tiene la misma funcionalidad que el State pero se utiliza con datos más  complejos.
+* @ObservedObject: tiene la misma funcionalidad que el Binding pero se utiliza con datos más  complejos.
+* @EnvironmentObject: tiene la misma funcionalidad que el ObservedObject pero se utiliza para enviar datos a mas de 2 vistas, podemos acceder desde cualquier parte de la aplicación  desde que se propaga
+    * Tener en cuenta que el programa asume que se le ha asignado el `EnvironmentObject` por lo cual aparecerá  error hasta que se asigne.
 > Nota: La clase debe ser mutable para estar observando cambios `ObservableObject` y que sus propiedades deben estar publicando su valor `@Published` para que la vista pueda leerla y modificarla.
 Agregar el `EnvironmentObject` en el previews de la vista principal y de la misma vista a utilizar para que obtenga los datos .
 
@@ -105,16 +105,16 @@ el deviceOwnerAuthenticationWithBiometrics: solo hace referencia a los sensores 
 
 # Utilización del WebView
 Para utilizar la WebView con la aplicación hay 3 formas de utilizarlo.
-- La primera forma es utilizando el `Link` que nos sacara de la aplicación y abrirá el navegador del móvil.
-- La segunda forma es utilizando el `WKWebView` que abrirá solo una vista dentro de la aplicación con las capacidades de un explorador web.
--- Creamos un nuevo archivo con una estructura de tipo `UIViewRepresentable` que será la forma en la que un componente visual de UIKit interactúe con uno de SwiftUI.
--- Dentro de este archivo, creamos una variable que será la URL que recibirá para mostrarlo.
--- Utilizamos la función de `makeUIView` para crear el componente de vista que queremos relacionar para retornar, en este caso retornaremos el `WKWebView` que es un componente de vista nativo para visualizar web.
--- Utilizamos la función `updateUIView` para actualizar el estado del componente de la vista, en este caso carga la URL en un visor web.
--- Regresamos a la vista principal y , en este caso se utilizó un botón, utilizaremos el `sheet` para activar criterio de visualización utilizando el `isPresented` y llamaremos al archivo creado para pasarle la URL.
-- La tercera forma es utilizando el `SFSafariViewController` que abrirá Safari dentro de nuestra aplicación.
--- Al igual que la segunda forma, creamos un nuevo archivo de tipo `UIViewControllerRepresentable`, creando una variable para la URL.
--- Llamaremos a las dos funciones parecidas a la de la segunda forma, `makeUIViewController` y `updateUIViewController`, pero solo se utilizara la primera.
--- En `makeUIViewController` que es para crear la vista, retornaremos el `SFSafariViewController` junto con la URL que se enviara a la variable creada.
--- A la segunda función solo la llamamos y la dejamos.
--- Al igual que la segunda forma, se utilizó  un botón, utilizamos al `sheet` para activarlo y llamamos al nuevo archivo creado para pasarle la URL.
+* La primera forma es utilizando el `Link` que nos sacara de la aplicación y abrirá el navegador del móvil.
+* La segunda forma es utilizando el `WKWebView` que abrirá solo una vista dentro de la aplicación con las capacidades de un explorador web.
+    * Creamos un nuevo archivo con una estructura de tipo `UIViewRepresentable` que será la forma en la que un componente visual de UIKit interactúe con uno de SwiftUI.
+    * Dentro de este archivo, creamos una variable que será la URL que recibirá para mostrarlo.
+    * Utilizamos la función de `makeUIView` para crear el componente de vista que queremos relacionar para retornar, en este caso retornaremos el `WKWebView` que es un componente de vista nativo para visualizar web.
+    * Utilizamos la función `updateUIView` para actualizar el estado del componente de la vista, en este caso carga la URL en un visor web.
+    * Regresamos a la vista principal y , en este caso se utilizó un botón, utilizaremos el `sheet` para activar criterio de visualización utilizando el `isPresented` y llamaremos al archivo creado para pasarle la URL.
+* La tercera forma es utilizando el `SFSafariViewController` que abrirá Safari dentro de nuestra aplicación.
+    * Al igual que la segunda forma, creamos un nuevo archivo de tipo `UIViewControllerRepresentable`, creando una variable para la URL.
+    * Llamaremos a las dos funciones parecidas a la de la segunda forma, `makeUIViewController` y `updateUIViewController`, pero solo se utilizara la primera.
+    * En `makeUIViewController` que es para crear la vista, retornaremos el `SFSafariViewController` junto con la URL que se enviara a la variable creada.
+    * A la segunda función solo la llamamos y la dejamos.
+    * Al igual que la segunda forma, se utilizó  un botón, utilizamos al `sheet` para activarlo y llamamos al nuevo archivo creado para pasarle la URL.
