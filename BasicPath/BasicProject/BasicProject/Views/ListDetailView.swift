@@ -9,11 +9,11 @@ import SwiftUI
 
 struct ListDetailView: View {
     
-//  Agregamos la estructura Programmer para que acepte datos de entra al hacer clic en el listado anterior
+//  Agregamos la estructura Programmer para que acepte datos de entrada al hacer clic en el listado anterior
     var programmer: Programmer
     
-//  Agregamos una variable que sera la modificada para el estado favorito
-//  Una variable binding llega desde otra clase y puede ser modificada
+//  Agregamos una variable que será la modificada para el estado favorito
+//  Una variable binding llega desde otra vista y puede ser modificada
     @Binding var favorite: Bool
     
     var body: some View {

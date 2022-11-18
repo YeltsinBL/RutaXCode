@@ -33,14 +33,14 @@ struct BiometricAuthView: View {
     private func autentication(){
 //      Para controlar errores
         var error: NSError?
-//        verificar si el dispositivo soporta autenticacion biometrica
+//        verificar si el dispositivo soporta autenticación biométrica
 //        Instanciamos el LAContxt
         let laContext = LAContext()
-//        pasamos las politicas
-//        deviceOwnerAuthentication: para autenticarnos biometricamente por applewatch y/o codigo
-//deviceOwnerAuthenticationWithBiometrics: solo hace referencia a los sensores biometricos
+//        pasamos las políticas
+//        deviceOwnerAuthentication: para autenticarnos biométricamente, por applewatch y/o codigo
+//deviceOwnerAuthenticationWithBiometrics: solo hace referencia a los sensores biométricos
         if laContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error){
-//           una vez verificado que utiliza sensor biometrico evaluamos
+//           una vez verificado que utiliza sensor biométrico evaluamos
             laContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Autenticate con un sensor biometrico"){ autenticated, error in
 //                verificamos si se a autenticado
                 if autenticated {

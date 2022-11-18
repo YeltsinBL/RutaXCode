@@ -19,7 +19,7 @@ final class ProgrammersModelData: ObservableObject{
 
 struct ListView: View {
     
-//  State
+//  State: se utiliza y modifica solo en esta vista 
     @State private var showFavorite = false
     
 //  Agregamos EnvironmentObject para que se pueda acceder a los datos de la lista, debemos de asegurarnos que deba de haber datos por eso lo instanciamos en el preview

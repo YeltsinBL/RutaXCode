@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct BindingView: View {
-//  Binding: almacena y actualiza el valor de una variable que no a sido creada el la vista actual
+//  Binding: almacena y actualiza el valor de una variable que no a sido creada en la vista actual
     @Binding var value: Int
-//ObservedObject: tiene la misma funcionalidad que el Binding pero se utiliza con datos mas complejos
+//ObservedObject: tiene la misma funcionalidad que el Binding pero se utiliza con datos más complejos
     @ObservedObject var user: UserData
     
     var body: some View {

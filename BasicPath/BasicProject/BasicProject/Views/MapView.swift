@@ -26,6 +26,7 @@ struct MapView: UIViewRepresentable {
     }
 //  Agregamos la función updateUIView para actualizar/trabajar en este mapa
     func updateUIView(_ uiView: MKMapView, context: Context) {
+//      Fijamos las coordenadas (latitud y longitud) en `CLLocationCoordinate2D`.
         let coordenadas =
         CLLocationCoordinate2D(latitude: -12.0431800, longitude: -77.0282400)
 //      Delimita la región que se quiere mostrar en el mapa en forma de grados

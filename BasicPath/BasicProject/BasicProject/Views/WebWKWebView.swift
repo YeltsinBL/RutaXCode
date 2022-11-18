@@ -7,7 +7,7 @@
 
 import SwiftUI
 import WebKit
-//UIViewRepresentable: es la forma en la que un componente visual de UIKit interactue con uno de SwiftUI
+//UIViewRepresentable: es la forma en la que un componente visual de UIKit interactúe con uno de SwiftUI
 struct WebWKWebView: UIViewRepresentable {
     
     let url : String
@@ -16,7 +16,7 @@ struct WebWKWebView: UIViewRepresentable {
 //        WKWebView: Componene de vista nativo para visualizar webs
         return WKWebView()
     }
-//    Interactua con el componente de UIKit, en este caso carga la URL en un visor web
+//    Interactúa con el componente de UIKit, en este caso carga la URL en un visor web
     func updateUIView(_ uiView: WKWebView, context: Context) {
         uiView.load(URLRequest(url: URL(string: url)!))
     }

@@ -30,7 +30,7 @@ struct ContentView: View {
             }
             .background(Color.yellow)
             Spacer()
-//          Ordena los elementos uno encima de otro
+//          Ordena los elementos uno encima del otro
             ZStack{
                 Text("")
                     .frame(maxWidth: .infinity,

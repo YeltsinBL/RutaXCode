@@ -14,11 +14,11 @@ struct WebView: View {
     private let url = "https://google.com"
     var body: some View {
         VStack (spacing: 15){
-//Link: abre el navegador web del movil fuera de la aplicacion
+//Link: abre el navegador web del movil fuera de la aplicación
             Link(destination: URL(string: url)!) {
                 Text("Visita Google")
             }
-//WKWebView: es una vista dentro de la aplicacion con las capacidades de un explorador web
+//WKWebView: es una vista dentro de la aplicación con las capacidades de un explorador web
             Button("Abrir WKWebView"){
 //Indicamos en que momento mostrar el WKWebView
                 showWKWebView = true
@@ -28,7 +28,7 @@ struct WebView: View {
             .sheet(isPresented: $showWKWebView){
                 WebWKWebView(url: url)
             }
-//Abre safari dentro de nuestra propia aplicacion
+//Abre safari dentro de nuestra propia aplicación
             Button("Abrir SFSafariViewController"){
                 showSafariWebView = true
             }

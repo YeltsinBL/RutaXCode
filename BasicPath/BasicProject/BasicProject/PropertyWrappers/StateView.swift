@@ -18,7 +18,7 @@ class UserData: ObservableObject{
 struct StateView: View {
     //State: cuando el valor se va a actualizar solo en la vista que a sido definida 
     @State private var value=0
-//    StateObject: tiene la misma funcionalidad que el State pero se utiliza con datos mas complejos
+//    StateObject: tiene la misma funcionalidad que el State pero se utiliza con datos más complejos
     @StateObject private var user = UserData()
     
     var body: some View {
@@ -43,7 +43,7 @@ struct StateView: View {
 
 struct StateView_Previews: PreviewProvider {
     static var previews: some View {
-//        Aniadimos un EnvironmentObject
+//        Añadimos un EnvironmentObject
         StateView().environmentObject(UserData())
     }
 }
