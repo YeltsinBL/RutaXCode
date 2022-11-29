@@ -2,11 +2,14 @@
 ## _Ejercicios iniciales para aplicaciones móviles en XCode utilizando SwiftUI y UIKit._
 Descripción de todo lo que se realizó en esta rama.
 
-En `ContentView` utilice los Stack y Spacer:
+En `ContentView` utilice los Stack, Spacer y Label:
 - VStack: ordena los elementos en forma vertical.
 - HStack: ordena los elementos en forma horizontal.
 - ZStack: ordena los elementos uno encima del otro.
 - Spacer: empuja los elementos para ocupar lo máximo posible de la pantalla y los separa uniformemente
+- Label:  utilice dos formas para poder crear imagen (icono) con texto acompañado: 
+    - la predefinida que une a la imagen con el texto y; 
+    - la custom que se puede crear por separado y cambiar su color a ambas.
 
 > Nota: Cada Stack puede contener 10 elementos como máximo, si se requiere agregar más elementos, se debe agregar otro Stack al Stack principal y en él se puede seguir agregando más elementos.
 

@@ -16,6 +16,24 @@ struct ContentView: View {
                 .foregroundColor(.accentColor)
             Text("Hello, world!").font(.title)
             Text("First Project!")
+//          Dos formas de utilizar el Label:
+//            La predefinida que une el texto con imagen.
+//            La custom que se puede crear por separado y cambiar su color a ambas independientemente.
+            Label("Label junto", systemImage: "figure.wave")
+                .labelStyle(.automatic)
+                .foregroundColor(.green)
+            Label{
+                Text("Uso")
+                    .font(.body)
+                    .foregroundColor(.primary)
+                Text("Label separado")
+                        .font(.subheadline)
+                        .foregroundColor(.red)
+            }icon: {
+                Image(systemName: "globe")
+                    .imageScale(.large)
+                    .foregroundColor(.green)
+            }
 //          Empuja los elementos para ocupar lo máximo posible de la pantalla y los separa uniformemente
             Spacer()
 //          Ordena los elementos de forma Horizontal
@@ -53,8 +71,8 @@ struct ContentView: View {
                     .background(Color.red)
                     .padding(90)
             }
-            Text("8")
-            Text("9")
+//            Text("8")
+//            Text("9")
 //          Total máximo para crear elementos en un Stack es de 10, si se requiere agregar más, se deberá agregar un Stack adicional y en él agregar los demás elementos necesarios
             VStack{
                 Text("10")
