@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var myDate = Date()
     var body: some View {
 //        Ordena los elementos en forma vertical
         VStack(alignment: .leading, spacing: 10) {
@@ -74,10 +75,11 @@ struct ContentView: View {
 //            Text("8")
 //            Text("9")
 //          Total máximo para crear elementos en un Stack es de 10, si se requiere agregar más, se deberá agregar un Stack adicional y en él agregar los demás elementos necesarios
-            VStack{
+            VStack(alignment: .leading){
                 Text("10")
-                Text("11")
-                Text("12")
+//              Agregar la fecha dentro de un Text, se puede hacer directo o por una variable para diferentes formatos
+                Text(Date(), style: .date)
+                Text(myDate, format: Date.FormatStyle(date: .numeric, time: .shortened))
                 Text("13")
                 Text("14")
                 Text("15")
