@@ -11,6 +11,8 @@ struct ContentView: View {
     @State private var myDate = Date()
     @State private var username = ""
     @State private var password = ""
+    @State private var valuetexteditor: String = "Nuevo valor"
+    @State private var countTextEditorValue = 0
     
     var body: some View {
 //        Ordena los elementos en forma vertical
@@ -83,7 +85,7 @@ struct ContentView: View {
     //              Agregar la fecha dentro de un Text, se puede hacer directo o por una variable para diferentes formatos
                     Text(Date(), style: .date)
                     Text(myDate, format: Date.FormatStyle(date: .numeric, time: .shortened))
-                    Text("13")
+//                    Text("13")
                     HStack {
     //                  Se puede crear los botones agregando la acción y modificando las propiedades de los textos y/o agregando un texto con su acción
                         Button(action: {
@@ -134,6 +136,24 @@ struct ContentView: View {
                         
                     }
                     .background(Color.cyan.opacity(0.3))
+                    VStack{
+                        Text("Uso de TextEditor")
+                        TextEditor(text: $valuetexteditor)
+                            .font(.custom("HelveticaNeue", size: 20))
+                            .textInputAutocapitalization(.none)
+                            .autocorrectionDisabled(true)
+                            .foregroundColor(.black)
+                            .border(.black)
+                            .frame(height: 90)
+                            .onChange(of: valuetexteditor, perform: {value in
+                                countTextEditorValue = value.count
+                            })
+                        Text("\(countTextEditorValue)")
+                            .foregroundColor(countTextEditorValue < 20 ? .blue : .red)
+                            .font(.largeTitle)
+                    }
+                    .background(Color.cyan.opacity(0.3))
+                    .padding()
                     VStack{
                         Text("16")
                         Text("17")

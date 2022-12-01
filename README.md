@@ -13,6 +13,7 @@ En `ContentView` utilice los Stack, Spacer y Label:
 - Fecha:  agregar fecha dentro de un Text, se puede hacer directo o por una variable para diferentes formatos.
 - Botón:  Se puede crear los botones agregando la acción y modificando las propiedades de los textos y/o agregando un texto con su acción.
 - TextField:   para poder ingresar cualquier valor y para poder ocultar los valores (como la contraseña) se usa SecureField, por cada dígito ingresado se tiene una acción mediante el OnChange.
+- TextEditor:   para poder ingresar valores en múltiples lineas y un tipo de fuente custom.
 
 > Nota: Cada Stack puede contener 10 elementos como máximo, si se requiere agregar más elementos, se debe agregar otro Stack al Stack principal y en él se puede seguir agregando más elementos.
 
