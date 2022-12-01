@@ -10,7 +10,9 @@ En `ContentView` utilice los Stack, Spacer y Label:
 - Label:  utilice dos formas para poder crear imagen (icono) con texto acompañado: 
     - la predefinida que une a la imagen con el texto y; 
     - la custom que se puede crear por separado y cambiar su color a ambas.
-- Fecha:  agregar fecha dentro de un Text, se puede hacer directo o por una variable para diferentes formatos.
+- Fecha: se puede obtener la fecha de muchas formas:
+    - agregar fecha dentro de un Text, se puede hacer directo o por una variable para diferentes formatos.
+    - DatePicker: si se le agrega sin style, aparece una linea con las fechas y horas, pero si lo agregamos los styles, en este caso se utiliza 2: `WheelDatePickerStyle` muestra selección de la fecha clásica y `GraphicalDatePickerStyle` muestra un calendario con la hora en la parte inferior; a la vez, se puede hacer la selección de la fecha desde un rango mínimo.
 - Botón:  Se puede crear los botones agregando la acción y modificando las propiedades de los textos y/o agregando un texto con su acción.
 - TextField:   para poder ingresar cualquier valor y para poder ocultar los valores (como la contraseña) se usa SecureField, por cada dígito ingresado se tiene una acción mediante el OnChange.
 - TextEditor:   para poder ingresar valores en múltiples lineas y un tipo de fuente custom.

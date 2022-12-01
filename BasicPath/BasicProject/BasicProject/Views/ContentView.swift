@@ -83,8 +83,25 @@ struct ContentView: View {
                 VStack(alignment: .leading){
                     Text("10 elementos máximos por stack")
     //              Agregar la fecha dentro de un Text, se puede hacer directo o por una variable para diferentes formatos
-                    Text(Date(), style: .date)
-                    Text(myDate, format: Date.FormatStyle(date: .numeric, time: .shortened))
+                    VStack{
+                        Text("Fechas")
+                        HStack {
+                            Text(Date(), style: .date)
+                            Text(" / ")
+                            Text(myDate, format: Date.FormatStyle(date: .numeric, time: .shortened))
+                        }
+                        DatePicker("Selecciona una Fecha", selection: $myDate)
+                        DatePicker("Fecha Clásica", selection: $myDate)
+                            .datePickerStyle(WheelDatePickerStyle())
+                        DatePicker("Fecha Calendario", selection: $myDate)
+                            .datePickerStyle(GraphicalDatePickerStyle())
+                            .background(.purple.opacity(0.5))
+                        
+                            DatePicker("Fechas", selection: $myDate, in: Date()..., displayedComponents: .date)
+                                .background(.green)
+                       
+                    }
+                    .background(.cyan.opacity(0.3))
 //                    Text("13")
                     HStack {
     //                  Se puede crear los botones agregando la acción y modificando las propiedades de los textos y/o agregando un texto con su acción
@@ -153,7 +170,7 @@ struct ContentView: View {
                             .font(.largeTitle)
                     }
                     .background(Color.cyan.opacity(0.3))
-                    .padding()
+//                    .padding()
                     VStack{
                         Text("16")
                         Text("17")
