@@ -22,6 +22,9 @@ En `ContentView` utilicé:
 En `ContentTwoView` utilicé:
 - ColorPicker: para seleccionar los colores y pintarlo en los demás elementos.
 - ProgressView: realicé los diseños para el cargar y descargar.
+- Stepper: utilicé dos opciones para aumentar y disminuir números:
+    - Se da un rango de números y una cantidad de aumento y disminución.
+    - En esta segunda opción, no se usa un rango de números y se puede aumentar y disminuir independientemente con acciones diferentes.
 
 
 En `ImageView` agregue una imagen a los assets y utilice Símbolos SF, las propiedades de imagen que utilice fueron:

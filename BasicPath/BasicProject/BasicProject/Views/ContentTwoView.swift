@@ -11,6 +11,7 @@ struct ContentTwoView: View {
     @State private var color:Color = .blue
     @State private var isLoading = false
     @State private var isDownloading:Float = 0.0
+    @State private var nro = 1
     
     var body: some View {
         ScrollView {
@@ -47,6 +48,22 @@ struct ContentTwoView: View {
                         }
                     }
                     .padding(.top, 5)
+                }
+                .padding()
+                .border(.green)
+                VStack{
+                    Text("Aumentar / Disminuir")
+                        .font(.largeTitle)
+//                  Se da un rango de números y una cantidad de aumento y disminución.
+                    Stepper("Nro IPhone \(nro)", value: $nro,in:  1...14,
+                        step: 2)
+//                  En esta segunda opción, no se usa un rango de números y se puede aumentar y disminuir independientemente con acciones diferentes.
+                    Stepper("Otra Opcion \(nro)") {
+                        nro += 2
+                    } onDecrement: {
+                        nro -= 1
+                    }
+
                 }
                 .padding()
                 .border(.green)
