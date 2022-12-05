@@ -97,7 +97,7 @@ struct ContentView: View {
                             .datePickerStyle(GraphicalDatePickerStyle())
                             .background(.purple.opacity(0.5))
                         
-                            DatePicker("Fechas", selection: $myDate, in: Date()..., displayedComponents: .date)
+//                            DatePicker("Fechas", selection: $myDate, in: Date()..., displayedComponents: .date)
                                 .background(.green)
                        
                     }
