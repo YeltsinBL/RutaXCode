@@ -26,6 +26,11 @@ En `ContentTwoView` utilicé:
     - Se da un rango de números y una cantidad de aumento y disminución.
     - En esta segunda opción, no se usa un rango de números y se puede aumentar y disminuir independientemente con acciones diferentes.
 - Slider: mover un círculo para obtener un número dentro del rango específico y a la vez visualizar le valor en un Text redondeándolo, porque como es un valor Float devuelve con decimales.
+- LazyGrid: Optimiza la carga de las vistas, mientras vas avanzando va cargando los elementos, las diferencias del LazyVGrid y LazyHGrid es que, el LazyVGrid recibe columns y el LazyHGrid recibe rows, que se llenan mediante los GridItem.
+- GridItem: se utilizó  los siguientes tamaños:
+    - Fixed: ancho fijo de las columnas/filas
+    - Adaptive: fija un mínimo de ancho para la columna/fila, no se puede controlar el número de elementos que pueden estar dentro de ella
+    - Flexible: solo se modifica el tamaño
 
 
 En `ImageView` agregue una imagen a los assets y utilice Símbolos SF, las propiedades de imagen que utilice fueron:

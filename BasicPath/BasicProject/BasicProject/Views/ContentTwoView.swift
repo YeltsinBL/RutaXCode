@@ -14,8 +14,12 @@ struct ContentTwoView: View {
     @State private var nro = 1
     @State private var isChangeSlider:Float = 0.0
     @State private var isChange = false
-    
-    @State private var valueX:Float = 2.0
+
+    //Fixed: ancho fijo de las columnas/filas
+    //Adaptive: fija un mínimo de ancho para la columna/fila, no se puede controlar el número de elementos que pueden estar dentro de ella
+    //Flexible: solo se modifica el tamaño
+    var elements = 1...100
+    let gridItems = [GridItem(.fixed(100)), GridItem(.adaptive(minimum:20)), GridItem(.flexible(minimum: 20)), GridItem(.flexible(minimum: 50))]
     
     var body: some View {
         ScrollView {
@@ -76,6 +80,26 @@ struct ContentTwoView: View {
                 }
                 .padding()
                 .border(.green)
+                VStack {
+                    Text("LazyVGrid / LazyHGrid")
+                        .font(.largeTitle)
+//                  LazyGrid: Optimiza la carga de las vistas, mientras vas avanzando va cargando los elementos
+//                  Las diferencias del LazyVGrid y LazyHGrid es que el LazyVGrid recibe columns y el LazyHGrid recibe rows
+                    ScrollView(.horizontal) {
+                        LazyHGrid(rows: gridItems, content: {
+                            ForEach(elements, id: \.self) { element in
+                                VStack {
+                                    Circle().frame(height: 15)
+                                    Text("\(element)")
+                                }
+                            }
+                        })
+                    }.border(.black)
+                        .frame(height: 350)
+                }
+                .padding()
+                .border(.green)
+                
             }
             .padding()
         }
