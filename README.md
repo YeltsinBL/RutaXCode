@@ -25,6 +25,7 @@ En `ContentTwoView` utilicé:
 - Stepper: utilicé dos opciones para aumentar y disminuir números:
     - Se da un rango de números y una cantidad de aumento y disminución.
     - En esta segunda opción, no se usa un rango de números y se puede aumentar y disminuir independientemente con acciones diferentes.
+- Slider: mover un círculo para obtener un número dentro del rango específico y a la vez visualizar le valor en un Text redondeándolo, porque como es un valor Float devuelve con decimales.
 
 
 En `ImageView` agregue una imagen a los assets y utilice Símbolos SF, las propiedades de imagen que utilice fueron:

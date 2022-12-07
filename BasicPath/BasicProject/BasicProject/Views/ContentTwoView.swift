@@ -12,6 +12,10 @@ struct ContentTwoView: View {
     @State private var isLoading = false
     @State private var isDownloading:Float = 0.0
     @State private var nro = 1
+    @State private var isChangeSlider:Float = 0.0
+    @State private var isChange = false
+    
+    @State private var valueX:Float = 2.0
     
     var body: some View {
         ScrollView {
@@ -63,7 +67,12 @@ struct ContentTwoView: View {
                     } onDecrement: {
                         nro -= 1
                     }
-
+                    
+                    Divider()
+                    Slider(value: $isChangeSlider, in: 0...10, step: 1, onEditingChanged: { (editing) in isChange = editing}, minimumValueLabel: Text("Min"), maximumValueLabel: Text("Max")){
+                        Text("Selecciona un numero")
+                    }
+                    Text("El valor del Slider es " + String(format:"%.0f", isChangeSlider))
                 }
                 .padding()
                 .border(.green)
