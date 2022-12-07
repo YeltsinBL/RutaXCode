@@ -93,6 +93,9 @@ En `ListDetailView`
 
 > Nota: Si no se agrega la información  que se va a pasar en el preview, mostrara error y no funcionara.
 
+En `FormView` utilicé:
+* Section: donde agregué el Header y Footer para que de forma más intuitiva se vean los elementos.
+
 ## Importante
 ### Property Wrappers
 Los property wrappers utilizados en el listado para pasar datos a otra vista, actualizar y filtrar; fueron los siguientes:
