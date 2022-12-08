@@ -31,6 +31,9 @@ En `ContentTwoView` utilicé:
     - Fixed: ancho fijo de las columnas/filas
     - Adaptive: fija un mínimo de ancho para la columna/fila, no se puede controlar el número de elementos que pueden estar dentro de ella
     - Flexible: solo se modifica el tamaño
+- TabView: utilicé dos estilos (el por defecto y PageTabViewStyle) para poder encontrar las diferencias al momento de colorear las opciones a seleccionar y el seleccionado.
+    - Para el estilo `por defecto` utilicé el `.tint` que pinta solo el seleccionado, las otras opciones siguen con el color gris, este estilo solo te permite seleccionar un opción para cambiar de TabView.
+    - Para el estilo `PageTabViewStyle` agregué dos lineas antes del body, dentro de un init para que se pinten las opciones no seleccionadas y el seleccionado, este estilo permite cambiar de TabView al desplazar o seleccionar las opciones.
 
 
 En `ImageView` agregue una imagen a los assets y utilice Símbolos SF, las propiedades de imagen que utilice fueron:

@@ -20,7 +20,11 @@ struct ContentTwoView: View {
     //Flexible: solo se modifica el tamaño
     var elements = 1...100
     let gridItems = [GridItem(.fixed(100)), GridItem(.adaptive(minimum:20)), GridItem(.flexible(minimum: 20)), GridItem(.flexible(minimum: 50))]
-    
+//  Para pintar las opciones de los TabView cuando tiene un estilo
+    init() {
+           UIPageControl.appearance().pageIndicatorTintColor = .blue
+           UIPageControl.appearance().currentPageIndicatorTintColor = .purple
+       }
     var body: some View {
         ScrollView {
             VStack {
@@ -100,6 +104,46 @@ struct ContentTwoView: View {
                 .padding()
                 .border(.green)
                 
+                VStack {
+                    Text("TabView Style Default")
+                        .font(.largeTitle)
+                    TabView{
+                        FirstTabView()
+                            .tabItem {
+                            Image(systemName:"house.fill")
+                            Text("First")
+                        }
+                        SecondTabView()
+                            .tabItem {
+                                Image(systemName:"person.crop.circle.fill")
+                                Text("Second")
+                            }
+                    }
+//                  utilicé el tint para cambiar el color al tabview seleccionado
+                    .tint(.yellow)
+                    .frame(height: 400)
+                    .border(.black)
+                    
+                    Text("Another TabView Style")
+                        .font(.largeTitle)
+                    TabView{
+                        FirstTabView()
+                            .tabItem {
+                            Image(systemName:"house.fill")
+                            Text("First")
+                        }
+                        SecondTabView()
+                            .tabItem {
+                                Image(systemName:"person.crop.circle.fill")
+                                Text("Second")
+                            }
+                    }
+                    .frame(height: 250)
+                    .border(.black)
+                    .tabViewStyle(PageTabViewStyle())
+                }
+                .padding()
+                .border(.green)
             }
             .padding()
         }
@@ -111,5 +155,25 @@ struct ContentTwoView: View {
 struct ContentTwoView_Previews: PreviewProvider {
     static var previews: some View {
         ContentTwoView()
+    }
+}
+
+struct FirstTabView: View {
+    var body: some View {
+        VStack {
+            Image(systemName:"house.fill")
+                .resizable()
+                .scaledToFit()
+                .frame(height: 100)
+            Text("First TabView")
+                .padding(.top, 15)
+            
+        }
+    }
+}
+
+struct SecondTabView: View {
+    var body: some View {
+        Text("Second TabView")
     }
 }
