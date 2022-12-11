@@ -36,6 +36,8 @@ En `ContentTwoView` utilicé:
     - Para el estilo `PageTabViewStyle` agregué dos lineas antes del body, dentro de un init para que se pinten las opciones no seleccionadas y el seleccionado, este estilo permite cambiar de TabView al desplazar o seleccionar las opciones.
 - FullScreenCover: para cargar una nueva pantalla, que ocupa toda la vista.
 - Sheet: para cargar una nueva pantalla, no ocupa toda la vista, deja un margen de espacio en la parte superior.
+- Alert: realicé 2 formas de hacer una alerta, la antigua y la nueva, en esta nueva agregué 2 botones a la acción porque no me deja llamar a un Alert como se hacía en la forma antigua.
+
 
 > Nota: Para el `FullScreenCover` y `Sheet` solo uno de los dos tiene que estar en la misma vista porque solo funcionará el que esta primero, en este caso solo funciona el `FullScreenCover`, si se comenta el código o se pone después del `Sheet`, funcionará el `Sheet`.
 

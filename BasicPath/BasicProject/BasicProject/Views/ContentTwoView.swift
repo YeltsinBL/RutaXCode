@@ -26,6 +26,7 @@ struct ContentTwoView: View {
            UIPageControl.appearance().currentPageIndicatorTintColor = .purple
        }
     @State private var isFullScreenCoverOrSheet = false
+    @State private var isAlert = false
     var body: some View {
         ScrollView {
             VStack {
@@ -184,6 +185,41 @@ struct ContentTwoView: View {
                 }
                 .padding()
                 .border(.green)
+                
+                VStack{
+                    Text("Alerta")
+                            .font(.largeTitle)
+                            .padding(.bottom, 10)
+                    Button("Mostrar Alerta"){
+                            isAlert = true
+                        }
+                    .alert("Nueva Alerta", isPresented: $isAlert) {
+                        
+                        Button("Aceptar") {
+                            isAlert = false
+                        }
+                        Button("Cancelar") {
+                            isAlert = false
+                        }
+                    }
+                    message: {
+                        Text("Nueva forma de mostrar una Alerta ")
+                    }
+//                    .alert(isPresented: $isAlert){
+//                        Alert(
+//                            title: Text("Forma Antigua de alerta"),
+//                            primaryButton: .default(Text("Aceptar")){
+//                                isAlert = false
+//                            },
+//                            secondaryButton: .destructive(Text("Cancel")){
+//                                isAlert = false
+//                            }
+//                        )}
+                    
+                }
+                .padding()
+                .border(.green)
+                
             }
             .padding()
         }
