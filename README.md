@@ -34,7 +34,10 @@ En `ContentTwoView` utilicé:
 - TabView: utilicé dos estilos (el por defecto y PageTabViewStyle) para poder encontrar las diferencias al momento de colorear las opciones a seleccionar y el seleccionado.
     - Para el estilo `por defecto` utilicé el `.tint` que pinta solo el seleccionado, las otras opciones siguen con el color gris, este estilo solo te permite seleccionar un opción para cambiar de TabView.
     - Para el estilo `PageTabViewStyle` agregué dos lineas antes del body, dentro de un init para que se pinten las opciones no seleccionadas y el seleccionado, este estilo permite cambiar de TabView al desplazar o seleccionar las opciones.
+- FullScreenCover: para cargar una nueva pantalla, que ocupa toda la vista.
+- Sheet: para cargar una nueva pantalla, no ocupa toda la vista, deja un margen de espacio en la parte superior.
 
+> Nota: Para el `FullScreenCover` y `Sheet` solo uno de los dos tiene que estar en la misma vista porque solo funcionará el que esta primero, en este caso solo funciona el `FullScreenCover`, si se comenta el código o se pone después del `Sheet`, funcionará el `Sheet`.
 
 En `ImageView` agregue una imagen a los assets y utilice Símbolos SF, las propiedades de imagen que utilice fueron:
 - Resizable: para que entre la imagen en todos los márgenes de la vista pero se deforma

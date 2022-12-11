@@ -25,6 +25,7 @@ struct ContentTwoView: View {
            UIPageControl.appearance().pageIndicatorTintColor = .blue
            UIPageControl.appearance().currentPageIndicatorTintColor = .purple
        }
+    @State private var isFullScreenCoverOrSheet = false
     var body: some View {
         ScrollView {
             VStack {
@@ -141,6 +142,45 @@ struct ContentTwoView: View {
                     .frame(height: 250)
                     .border(.black)
                     .tabViewStyle(PageTabViewStyle())
+                }
+                .padding()
+                .border(.green)
+                
+                VStack{
+                    Text("FullScreenCover")
+                            .font(.largeTitle)
+                            .padding(.bottom, 10)
+                    Button("Full Screen Cover"){
+                            isFullScreenCoverOrSheet = true
+                        }.fullScreenCover(
+                            isPresented: $isFullScreenCoverOrSheet,
+                            content: {
+                                ZStack{
+                                    Color.blue.ignoresSafeArea()
+                                    Button("Ocultar FullScreenCover"){
+                                    isFullScreenCoverOrSheet = false
+                                }.foregroundColor(.yellow)
+                            }
+                        })
+                    Divider()
+                    Text("Sheet")
+                            .font(.largeTitle)
+                            .padding(.bottom, 10)
+                    Button("Sheet"){
+                            isFullScreenCoverOrSheet = true
+                        }
+                        .sheet(
+                            isPresented: $isFullScreenCoverOrSheet,
+                            onDismiss: { isFullScreenCoverOrSheet = false },
+                            content: {
+                                ZStack{
+                                    Color.red.ignoresSafeArea()
+                                    Button("Ocultar Sheet"){
+                                    isFullScreenCoverOrSheet = false
+                                }.foregroundColor(.yellow)
+                            }
+                        })
+                    
                 }
                 .padding()
                 .border(.green)
