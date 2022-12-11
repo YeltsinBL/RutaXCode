@@ -27,6 +27,7 @@ struct ContentTwoView: View {
        }
     @State private var isFullScreenCoverOrSheet = false
     @State private var isAlert = false
+    @State private var isActionSheet = false
     var body: some View {
         ScrollView {
             VStack {
@@ -215,7 +216,28 @@ struct ContentTwoView: View {
 //                                isAlert = false
 //                            }
 //                        )}
-                    
+                    Divider()
+                    Text("ActionSheet / ConfirmationDialog")
+                            .font(.largeTitle)
+                            .padding(.bottom, 10)
+                            .multilineTextAlignment(.center)
+                    Button("Mostrar ConfirmationDialog"){
+                            isActionSheet = true
+                        }
+                    .confirmationDialog(Text("ActionSheet"), isPresented: $isActionSheet) {
+                        Button("Aceptar") {
+                            isActionSheet = false
+                        }.background(.yellow)
+                        Button("Cancelar", role: .cancel) {
+                            isActionSheet = false
+                        }
+                        Button("Eliminar", role: .destructive) {
+                            isActionSheet = false
+                        }
+
+                    } message: {
+                        Text("Tus opciones son estas:")
+                    }
                 }
                 .padding()
                 .border(.green)
