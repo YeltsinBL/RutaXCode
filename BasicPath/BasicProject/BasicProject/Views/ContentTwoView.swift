@@ -286,6 +286,54 @@ struct ContentTwoView: View {
                     } message: {
                         Text("Segunda Opción:")
                     }
+                    Divider()
+                    
+//                    Divider().hidden()
+                    VStack {
+                        Text("Menu")
+                                .font(.largeTitle)
+                                .padding(.bottom, 10)
+                        Menu{
+                            Button("Primera Opcion") {
+                                isContextMenuAlert = true
+                            }
+                            .alert("Primera Opcion", isPresented: $isContextMenuAlert) {
+                                Button("Aceptar") {
+                                    isContextMenuAlert = false
+                                }
+                            }
+                            Button("Segunda Opcion"){
+                                isContextMenu = true
+                            }
+                            Menu{
+                                Button("Tercera Opcion"){
+                                    //
+                                }
+                                Button("Cuarta Opcion"){
+                                    //
+                                }
+                            } label: {
+                                Label("More", systemImage: "ellipsis")
+                            }
+                        } label: {
+                            Label{
+                                Text("Presiona Menu")
+                                    .padding(
+                                        .trailing,10)
+                            }icon: {
+                                Image(systemName: "figure.wave")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height: 100)
+                                    .padding(.leading,10)
+                                    .padding(.top,10)
+                                    .padding(.bottom,10)
+                            }
+                        }
+                        .bold()
+                        .border(.blue)
+                        .foregroundColor(.black)
+                    }
                     
                 }
                 .padding()
