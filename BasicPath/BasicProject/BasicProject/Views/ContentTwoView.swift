@@ -28,6 +28,9 @@ struct ContentTwoView: View {
     @State private var isFullScreenCoverOrSheet = false
     @State private var isAlert = false
     @State private var isActionSheet = false
+    @State private var isContextMenuAlert = false
+    @State private var isContextMenu = false
+    
     var body: some View {
         ScrollView {
             VStack {
@@ -73,7 +76,7 @@ struct ContentTwoView: View {
                     Stepper("Nro IPhone \(nro)", value: $nro,in:  1...14,
                         step: 2)
 //                  En esta segunda opción, no se usa un rango de números y se puede aumentar y disminuir independientemente con acciones diferentes.
-                    Stepper("Otra Opcion \(nro)") {
+                    Stepper("Otra Opción \(nro)") {
                         nro += 2
                     } onDecrement: {
                         nro -= 1
@@ -238,6 +241,52 @@ struct ContentTwoView: View {
                     } message: {
                         Text("Tus opciones son estas:")
                     }
+                    Divider()
+                    Text("ContextMenu")
+                            .font(.largeTitle)
+                            .padding(.bottom, 10)
+                    Label{
+                        Text("Manten Presionado")
+                            .padding(.trailing,10)
+                    }icon: {
+                        Image(systemName: "figure.wave")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 100)
+                            .padding(.leading,10)
+                            .padding(.top,10)
+                            .padding(.bottom,10)
+                    }
+                    .bold()
+                    .border(.blue)
+                    .contextMenu(
+                        ContextMenu(menuItems: {
+                            Button("Primera Opción") {
+                                isContextMenuAlert = true
+                            }
+                            Button("Segunda Opción"){
+                                isContextMenu = true
+                            }
+                        }))
+                    .alert("Primera Opción", isPresented: $isContextMenuAlert) {
+                        Button("Aceptar") {
+                            isContextMenuAlert = false
+                        }
+                    }
+                    .confirmationDialog(Text("ContextMenu"), isPresented: $isContextMenu){
+                        Button("Aceptar"){
+                            isContextMenu = false
+                        }
+                        Button("Cancelar", role: .cancel) {
+                            isContextMenu = false
+                        }
+                        Button("Eliminar", role: .destructive) {
+                            isContextMenu = false
+                        }
+                    } message: {
+                        Text("Segunda Opción:")
+                    }
+                    
                 }
                 .padding()
                 .border(.green)
