@@ -30,6 +30,8 @@ struct ContentTwoView: View {
     @State private var isActionSheet = false
     @State private var isContextMenuAlert = false
     @State private var isContextMenu = false
+    @State private var isNroTapGesture = 0
+    @State private var dragOffSet: CGSize = .zero
     
     var body: some View {
         ScrollView {
@@ -336,6 +338,40 @@ struct ContentTwoView: View {
                     }
                     
                 }
+                .padding()
+                .border(.green)
+                VStack{
+                    Text("DragGesture y TapGesture")
+                            .font(.largeTitle)
+                            .padding(.bottom, 10)
+                    VStack {
+                        Circle()
+                            .bold()
+                            .padding()
+                            .border(.blue)
+                            .foregroundColor(.black)
+                            .frame(width: 100, height: 100)
+                            .offset(x: dragOffSet.width, y: dragOffSet.height)
+                            .gesture(
+                                DragGesture()
+                                    .onChanged({
+                                        value in
+                                        dragOffSet = value.translation
+                                    })
+                                    .onEnded({
+                                        value in
+                                        withAnimation(.spring()) {
+                                            dragOffSet = .zero
+                                        }
+                                    })
+                            )
+                            .onTapGesture(count: 2) {
+                                isNroTapGesture += 1
+                            }
+                    }
+                    Text("Nro de doble clic realizado:  \(isNroTapGesture)")
+                }
+                .frame(width: 360)
                 .padding()
                 .border(.green)
                 

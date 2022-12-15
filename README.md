@@ -40,6 +40,10 @@ En `ContentTwoView` utilicé:
 - ConfirmationDialog: antes llamada `ActionSheet`, utilicé la nueva forma de hacerlo, es parecido a los `Alert`, aparecen las opciones en forma de lista en la parte inferior de la vista.
 - ContextMenu: al mantener presionado mostrará algunas opciones a escoger.
 - Menu: al presionar una vez, mostrará algunas opciones a escoger.
+- Gesture: utilicé dos propiedades:
+    - DragGesture: para mover elementos en la vista.
+    - TapGesture: para contar las veces de clics realizados.
+
 
 
 > Nota: Para el `FullScreenCover` y `Sheet` solo uno de los dos tiene que estar en la misma vista porque solo funcionará el que esta primero, en este caso solo funciona el `FullScreenCover`, si se comenta el código o se pone después del `Sheet`, funcionará el `Sheet`.
