@@ -92,6 +92,7 @@ En `ListView` agregue un listado en el que se puede navegar entre pantallas y a 
     * Agregamos el `RowView` dentro del `NavigationLink` donde se pone la vista a donde queremos ir.
     * Agregamos de la lista mutable y el estado para actualizar el valor
     * También  se agregó a las filas de la lista el `swipeActions` para mover de derecha a izquierda, el por defecto es mover a la derecha.
+    * A la vez se agregó el `Refreshable` para actualizar la lista.
 
 * En el `preview` agregamos:
     * Un `EnvironmentObject` para poder pasar los datos hacia la vista de `RowView`.

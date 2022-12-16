@@ -67,6 +67,9 @@ struct ListView: View {
                     }
                 }
             }
+            .refreshable {
+                //Acción al momento de actualizar la lista
+            }
             .navigationTitle("Programmers")
             .alert("Eliminar", isPresented: $isMensajeAlert) {
                 Button("Aceptar") {
