@@ -31,7 +31,8 @@ struct ListView: View {
             return !showFavorite || programmer.favorite
         }
     }
-    
+    @State private var isMensajeAlert = false
+    @State private var isConfirmationDialog = false
     var body: some View {
         
     //Agregamos la lista en un NavigationView para dar la funcionalidad de navegar haciendo clic en la lista
@@ -49,9 +50,50 @@ struct ListView: View {
                     NavigationLink(destination: ListDetailView(programmer: programmer, favorite: $programmersModelData.programmers[programmer.id].favorite)){
                         RowView(programmer: programmer)
                     }
+                    .swipeActions {
+                        Button{
+                            isConfirmationDialog = true
+                        } label: {
+                            Label("Compartir", systemImage: "square.and.arrow.up")
+                        }.tint(.blue)
+                    }
+                    .swipeActions(edge: .leading) {
+                        Button{
+                            isMensajeAlert = true
+                        }label: {
+                            Label("Eliminar", systemImage: "trash.fill")
+                        }
+                        .tint(.red)
+                    }
                 }
             }
             .navigationTitle("Programmers")
+            .alert("Eliminar", isPresented: $isMensajeAlert) {
+                Button("Aceptar") {
+                    isMensajeAlert = false
+                }.bold()
+                Button("Cancelar"){
+                    isMensajeAlert = false
+                }
+            } message: {
+                Text("Desea eliminar esta información")
+            }
+            .confirmationDialog(Text("ContextMenu"), isPresented: $isConfirmationDialog){
+                Button("Facebook"){
+                    isConfirmationDialog = false
+                }
+                Button("Cancelar", role: .cancel) {
+                    isConfirmationDialog = false
+                }
+                Button("Twitter") {
+                    isConfirmationDialog = false
+                }
+                Button("Instagram") {
+                    isConfirmationDialog = false
+                }
+            } message: {
+                Text("Compartir en:")
+            }
         }
     }
 }
