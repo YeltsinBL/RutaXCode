@@ -32,6 +32,9 @@ struct ContentTwoView: View {
     @State private var isContextMenu = false
     @State private var isNroTapGesture = 0
     @State private var dragOffSet: CGSize = .zero
+    @State private var nameAppStorage = ""
+    @AppStorage("appStorageName") private var appStorageName = ""
+    @State private var isAppStorageAlert = false
     
     var body: some View {
         ScrollView {
@@ -374,7 +377,35 @@ struct ContentTwoView: View {
                 .frame(width: 360)
                 .padding()
                 .border(.green)
-                
+                VStack{
+                    Text("@AppStorage")
+                            .font(.largeTitle)
+                            .padding(.bottom, 10)
+                    HStack {
+                        Text("Nombre: ")
+                        TextField("Ingresa un nombre", text: $nameAppStorage)
+                    }
+                    Spacer()
+                    Button("Guardar"){
+                        appStorageName = nameAppStorage
+                    }.padding()
+                    Spacer()
+                    Button("Mostrar valor guardado"){
+                        isAppStorageAlert = true
+                    }
+                }
+                .alert("AppStorage", isPresented: $isAppStorageAlert) {
+                    Button("Aceptar") {
+                        isAppStorageAlert = false
+                    }
+                } message: {
+                    Text("El nombre guardado es:\n \(UserDefaults.standard.string(forKey: "appStorageName") ?? "ingrese un nombre")")
+                }
+                .onAppear{
+                    nameAppStorage = appStorageName
+                }
+                .padding()
+                .border(.green)
             }
             .padding()
         }

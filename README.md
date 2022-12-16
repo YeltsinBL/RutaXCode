@@ -120,6 +120,7 @@ Los property wrappers utilizados en el listado para pasar datos a otra vista, ac
 * @ObservedObject: tiene la misma funcionalidad que el Binding pero se utiliza con datos más  complejos.
 * @EnvironmentObject: tiene la misma funcionalidad que el ObservedObject pero se utiliza para enviar datos a mas de 2 vistas, podemos acceder desde cualquier parte de la aplicación  desde que se propaga
     * Tener en cuenta que el programa asume que se le ha asignado el `EnvironmentObject` por lo cual aparecerá  error hasta que se asigne.
+* @AppStorage: guarda datos en memoria
 > Nota: La clase debe ser mutable para estar observando cambios `ObservableObject` y que sus propiedades deben estar publicando su valor `@Published` para que la vista pueda leerla y modificarla.
 Agregar el `EnvironmentObject` en el previews de la vista principal y de la misma vista a utilizar para que obtenga los datos .
 
