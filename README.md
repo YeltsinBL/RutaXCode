@@ -120,9 +120,10 @@ Los property wrappers utilizados en el listado para pasar datos a otra vista, ac
 * @ObservedObject: tiene la misma funcionalidad que el Binding pero se utiliza con datos más  complejos.
 * @EnvironmentObject: tiene la misma funcionalidad que el ObservedObject pero se utiliza para enviar datos a mas de 2 vistas, podemos acceder desde cualquier parte de la aplicación  desde que se propaga
     * Tener en cuenta que el programa asume que se le ha asignado el `EnvironmentObject` por lo cual aparecerá  error hasta que se asigne.
-* @AppStorage: guarda datos en memoria
+* @AppStorage: guarda datos en una base de datos.
+* @SceneStorage: guarda la información de un elemento de la vista, esta no se puede compartir con otra, si se desea guardar varias elementos se debe crear otro @SceneStorage.
 > Nota: La clase debe ser mutable para estar observando cambios `ObservableObject` y que sus propiedades deben estar publicando su valor `@Published` para que la vista pueda leerla y modificarla.
-Agregar el `EnvironmentObject` en el previews de la vista principal y de la misma vista a utilizar para que obtenga los datos .
+Agregar el `EnvironmentObject` en el previews de la vista principal y de la misma vista a utilizar para que obtenga los datos. `AppStorage` usa por debajo la clase UserDafault que es otra forma de recuperar lo que se ha guardado. `@SceneStorage` guarda la información al salir de la aplicación, no al cerrar manualmente la aplicación.
 
 # Utilizar FaceID
 Lo principal que se debe de agregar al proyecto es la opción de `Privacy - Face ID Usage Description`, para ellos hacemos lo siguiente:

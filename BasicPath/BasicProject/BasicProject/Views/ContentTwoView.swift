@@ -35,6 +35,7 @@ struct ContentTwoView: View {
     @State private var nameAppStorage = ""
     @AppStorage("appStorageName") private var appStorageName = ""
     @State private var isAppStorageAlert = false
+    @SceneStorage("mensajeScene") private var mensajeScene = ""
     
     var body: some View {
         ScrollView {
@@ -393,6 +394,15 @@ struct ContentTwoView: View {
                     Button("Mostrar valor guardado"){
                         isAppStorageAlert = true
                     }
+                    Divider()
+                    Text("@SceneStorage")
+                            .font(.largeTitle)
+                            .padding(.bottom, 10)
+                    HStack {
+                        Text("Mensaje: ")
+                        TextField("Ingrese un mensaje", text: $mensajeScene)
+                    }
+                    
                 }
                 .alert("AppStorage", isPresented: $isAppStorageAlert) {
                     Button("Aceptar") {
