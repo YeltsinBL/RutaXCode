@@ -48,6 +48,7 @@ En `ContentTwoView` utilicé:
 
 En `ContentThreeView` utilicé:
 - AsyncImage: para cargan imágenes dentro de la aplicación mediante una url.
+- GeometryReader: sirve para poder posicionar subvistas con un layout customizado mediante el parámetro GeometryProxy que nos da la posición y tamaño que ocupa el GeometryReader; también se puede hacer animaciones.
 
 
 En `ImageView` agregue una imagen a los assets y utilice Símbolos SF, las propiedades de imagen que utilice fueron:

@@ -7,28 +7,57 @@
 
 import SwiftUI
 
+let arrayOfName = [ "GeometryReader", "Primera", "Animación"]
+
 struct ContentThreeView: View {
     private let url = URL(string: "https://i.pinimg.com/564x/f0/45/82/f04582962fdbc32271ac6581d55c3e2f.jpg")
     var body: some View {
-        VStack{
+        ScrollView (showsIndicators: false){
             VStack{
-                Text("AsyncImage")
+                VStack{
+                    Text("AsyncImage")
+                            .font(.largeTitle)
+                            .padding(.bottom, 10)
+                    AsyncImage(url: url!) { image in
+                        image
+                            .resizable()
+                            .clipShape(Circle())
+                            .overlay(Circle().stroke(Color.blue, lineWidth: 5))
+                            .scaledToFit()
+                    } placeholder: {
+                        ProgressView()
+                    }
+
+                }
+                .padding()
+                .border(.green)
+                VStack{
+                    Text("GeometryReader Animación 3D")
                         .font(.largeTitle)
                         .padding(.bottom, 10)
-                AsyncImage(url: url!) { image in
-                    image
-                        .resizable()
-                        .clipShape(Circle())
-                        .overlay(Circle().stroke(Color.blue, lineWidth: 5))
-                        .scaledToFit()
-                } placeholder: {
-                    ProgressView()
+                    VStack{
+                        ForEach(arrayOfName, id: \.self) { name in
+                            GeometryReader { proxy in
+                                VStack{
+                                    Text("Posición en Y: \(proxy.frame(in: .global).minY)")
+                                    Spacer()
+                                    Text("\(name)")
+                                        .frame(width: 370, height: 200)
+                                        .background(.green)
+                                        .cornerRadius(20)
+                                    Spacer()
+                                }
+                                .shadow(color: .gray, radius: 10, x: 0, y: 0)
+                                .rotation3DEffect(Angle(degrees: Double(proxy.frame(in: .global).minY) - 675), axis: (x: 0.0, y: 10.0, z: 0.0))
+                            }
+                        }
+                        .frame(width: 370, height: 300)
+                    }
+                    .padding(.top, 30)
                 }
-
+                .padding()
+                .border(.green)
             }
-            .padding()
-            .border(.green)
-            
         }
     }
 }
