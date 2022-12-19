@@ -71,6 +71,7 @@
 			children = (
 				3B6E7FE12908F9E800ED57AC /* ContentView.swift */,
 				3B3D6F48293D70DC00E811CB /* ContentTwoView.swift */,
+				3B98A553294CDA7400E886E9 /* ContentThreeView.swift */,
 				3B3D5484291433B000DE6B49 /* ImageView.swift */,
 				3B3D54862914C9B600DE6B49 /* MapView.swift */,
 				3B3D54882914D33900DE6B49 /* MainView.swift */,
@@ -82,7 +83,6 @@
 				3BD281242923498F0048C548 /* WebWKWebView.swift */,
 				3BD2812629234F380048C548 /* WebSafariView.swift */,
 				3B820589294107D700EBE06E /* FormView.swift */,
-				3B98A553294CDA7400E886E9 /* ContentThreeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
