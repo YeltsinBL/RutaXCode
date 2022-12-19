@@ -9,6 +9,23 @@ import SwiftUI
 
 let arrayOfName = [ "GeometryReader", "Primera", "Animación"]
 
+struct NewButtonModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.body)
+            .foregroundColor(.white)
+            .padding()
+            .background(.blue)
+            .cornerRadius(30)
+    }
+}
+
+extension View{
+    func newButtonModifierOptimizar() -> some View{
+        self.modifier(NewButtonModifier())
+    }
+}
+
 struct ContentThreeView: View {
     private let url = URL(string: "https://i.pinimg.com/564x/f0/45/82/f04582962fdbc32271ac6581d55c3e2f.jpg")
     var body: some View {
@@ -54,6 +71,21 @@ struct ContentThreeView: View {
                         .frame(width: 370, height: 300)
                     }
                     .padding(.top, 30)
+                }
+                .padding()
+                .border(.green)
+                VStack{
+                    Text("ViewModifier")
+                            .font(.largeTitle)
+                            .padding(.bottom, 10)
+                    Button("Prueba de ViewModifier"){
+//
+                    }
+                    .modifier(NewButtonModifier())
+                    Button("Prueba de ViewModifier Codigo Optimizado"){
+//
+                    }
+                    .newButtonModifierOptimizar()
                 }
                 .padding()
                 .border(.green)
