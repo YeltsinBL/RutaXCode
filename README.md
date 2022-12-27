@@ -117,6 +117,9 @@ En `ListDetailView`
 En `FormView` utilicé:
 * Section: donde agregué el Header y Footer para que de forma más intuitiva se vean los elementos.
 
+En `ReproduceView` utilicé:
+* VideoPlayer: importé AVKit para utilizarlo y reproducir vídeos por una URL, también  se puede hacer agregando un video al proyecto y asignando el nombre con la extensión.
+
 ## Importante
 ### Property Wrappers
 Los property wrappers utilizados en el listado para pasar datos a otra vista, actualizar y filtrar; fueron los siguientes:
