@@ -56,23 +56,47 @@ struct CustomNavigationViewContainer<Content: View> :View{
 struct CustomNavigationView: View {
     var body: some View {
         CustomNavigationViewContainer {
-            VStack {
+            VStack(alignment: .leading) {
                 Text("Prueba Preference 1")
+                    .padding()
 //                    .navigationTitle("Primera Prueba Basica")
                     .preference(key: CustomTitleKey.self, value: "Prueba Preference 1")
                 
                 Text("Prueba Preference 2")
+                    .padding()
 //                    .navigationTitle("Primera Prueba Basica")
                     .preference(key: CustomTitleKey.self, value: "Prueba Preference 2")
                 
                 VStack{
                     
-                    Text("Prueba Preference 3")
+                    Text("Prueba Preference ViewModifier")
+                        .padding()
     //                    .navigationTitle("Primera Prueba Basica")
-                        .preference(key: CustomTitleKey.self, value: "Prueba Preference 3")
+//                        .preference(key: CustomTitleKey.self, value: "Prueba Preference 3")
+                        .customNavigationTitle(title: "Prueba Preference ViewModifier")
                 }
             }
         }
+    }
+}
+
+extension View{
+    func customNavigationTitle(title: String) -> some View {
+        modifier(CustomNavigationTitle(title: title))
+    }
+}
+
+//Creamos nuestro propio Modificador
+struct CustomNavigationTitle: ViewModifier{
+    private var title : String
+//    Acepta un parametro de entrada
+    init(title: String) {
+        self.title = title
+    }
+    
+    func body(content: Content) -> some View {
+        content
+            .preference(key: CustomTitleKey.self, value: title)
     }
 }
 
