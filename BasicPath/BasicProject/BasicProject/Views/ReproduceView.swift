@@ -24,11 +24,22 @@ let arrayofSounds: [SoundModel] = [
     .init(name: "hero3")
 ]
 
+//Clase va a ir la logica con la reporducción del sonido
+class SoundPlayer{
+    var audio: AVAudioPlayer?
+    
+    func play(withURL url:URL) {
+        audio = try! AVAudioPlayer(contentsOf: url)
+        audio?.prepareToPlay()
+        audio?.play()
+    }
+}
+
 struct ReproduceView: View {
     
     let url = URL(string: "https://media0.giphy.com/media/nZYasmPnlRT1oyHDlV/giphy480p.mp4")!
     
-    @State var audio: AVAudioPlayer?
+    private let soundPlayer = SoundPlayer()
     
     var body: some View {
         VStack{
@@ -55,9 +66,7 @@ struct ReproduceView: View {
                 List{
                     ForEach(arrayofSounds, id: \.self) { sound in
                         Button("Sonido: \(sound.name)"){
-                            audio = try! AVAudioPlayer(contentsOf: sound.getURL())
-                            audio?.prepareToPlay()
-                            audio?.play()
+                            soundPlayer.play(withURL: sound.getURL())
                         }
                     }
                 }
