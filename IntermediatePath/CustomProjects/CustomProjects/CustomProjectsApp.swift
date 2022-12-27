@@ -11,7 +11,8 @@ import SwiftUI
 struct CustomProjectsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            CustomLayoutView()
+            CustomNavigationView()
         }
     }
 }
