@@ -119,6 +119,7 @@ En `FormView` utilicé:
 
 En `ReproduceView` utilicé:
 * VideoPlayer: importé AVKit para utilizarlo y reproducir vídeos por una URL, también  se puede hacer agregando un video al proyecto y asignando el nombre con la extensión.
+* AVAudioPlayer: se debe de importar el AVKit para utilizarlo, reproduce audio, en este caso, se agregó sonidos a la aplicación y se redirigió mediante la Url, ruta de acceso a los sonidos.
 
 ## Importante
 ### Property Wrappers

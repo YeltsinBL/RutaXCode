@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3B0FCED2295AB4B700D85D28 /* ReproduceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0FCED1295AB4B700D85D28 /* ReproduceView.swift */; };
+		3B0FCEDC295AD05F00D85D28 /* hero3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3B0FCED9295AD05F00D85D28 /* hero3.wav */; };
+		3B0FCEDD295AD05F00D85D28 /* hero2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3B0FCEDA295AD05F00D85D28 /* hero2.wav */; };
+		3B0FCEDE295AD05F00D85D28 /* hero1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3B0FCEDB295AD05F00D85D28 /* hero1.wav */; };
 		3B3D5485291433B000DE6B49 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3D5484291433B000DE6B49 /* ImageView.swift */; };
 		3B3D54872914C9B600DE6B49 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3D54862914C9B600DE6B49 /* MapView.swift */; };
 		3B3D54892914D33900DE6B49 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3D54882914D33900DE6B49 /* MainView.swift */; };
@@ -33,6 +36,10 @@
 
 /* Begin PBXFileReference section */
 		3B0FCED1295AB4B700D85D28 /* ReproduceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReproduceView.swift; sourceTree = "<group>"; };
+		3B0FCED7295ACF1000D85D28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3B0FCED9295AD05F00D85D28 /* hero3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hero3.wav; sourceTree = "<group>"; };
+		3B0FCEDA295AD05F00D85D28 /* hero2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hero2.wav; sourceTree = "<group>"; };
+		3B0FCEDB295AD05F00D85D28 /* hero1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hero1.wav; sourceTree = "<group>"; };
 		3B3D5484291433B000DE6B49 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		3B3D54862914C9B600DE6B49 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		3B3D54882914D33900DE6B49 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -68,6 +75,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B0FCED8295AD05F00D85D28 /* Sonidos */ = {
+			isa = PBXGroup;
+			children = (
+				3B0FCED9295AD05F00D85D28 /* hero3.wav */,
+				3B0FCEDA295AD05F00D85D28 /* hero2.wav */,
+				3B0FCEDB295AD05F00D85D28 /* hero1.wav */,
+			);
+			path = Sonidos;
+			sourceTree = "<group>";
+		};
 		3B3D548A2914DD4000DE6B49 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +103,7 @@
 				3BD2812629234F380048C548 /* WebSafariView.swift */,
 				3B820589294107D700EBE06E /* FormView.swift */,
 				3B0FCED1295AB4B700D85D28 /* ReproduceView.swift */,
+				3B0FCED8295AD05F00D85D28 /* Sonidos */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -117,6 +135,7 @@
 		3B6E7FDE2908F9E800ED57AC /* BasicProject */ = {
 			isa = PBXGroup;
 			children = (
+				3B0FCED7295ACF1000D85D28 /* Info.plist */,
 				3B6E7FDF2908F9E800ED57AC /* BasicProjectApp.swift */,
 				3BD281192922EE7E0048C548 /* PropertyWrappers */,
 				3B3D548B2914DD9500DE6B49 /* Data */,
@@ -204,7 +223,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B6E7FE72908F9E900ED57AC /* Preview Assets.xcassets in Resources */,
+				3B0FCEDD295AD05F00D85D28 /* hero2.wav in Resources */,
+				3B0FCEDC295AD05F00D85D28 /* hero3.wav in Resources */,
 				3B6E7FE42908F9E900ED57AC /* Assets.xcassets in Resources */,
+				3B0FCEDE295AD05F00D85D28 /* hero1.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +387,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BasicProject/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BasicProject/Info.plist;
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Necesitas autenticarte mediante el sensor biometrico";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -394,6 +417,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BasicProject/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BasicProject/Info.plist;
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "Necesitas autenticarte mediante el sensor biometrico";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
