@@ -42,38 +42,40 @@ struct ReproduceView: View {
     private let soundPlayer = SoundPlayer()
     
     var body: some View {
-        VStack{
+        ScrollView {
             VStack{
-                Text("VideoPlayer")
-                        .font(.largeTitle)
-                        .padding(.bottom, 10)
-                VideoPlayer(player: .init(url: url )){
-                    Text("Te gustó el video?")
-                        .foregroundColor(.white)
-                        .bold()
-                        .padding()
-                    Spacer()
+                VStack{
+                    Text("VideoPlayer")
+                            .font(.largeTitle)
+                            .padding(.bottom, 10)
+                    VideoPlayer(player: .init(url: url )){
+                        Text("Te gustó el video?")
+                            .foregroundColor(.white)
+                            .bold()
+                            .padding()
+                        Spacer()
+                    }
+                    .frame(height: 250)
                 }
-                .frame(height: 250)
-            }
-            .padding()
-            .border(.green)
-            
-            VStack{
-                Text("AVAudioPlayer")
-                        .font(.largeTitle)
-                        .padding(.bottom, 10)
-                List{
-                    ForEach(arrayofSounds, id: \.self) { sound in
-                        Button("Sonido: \(sound.name)"){
-                            soundPlayer.play(withURL: sound.getURL())
+                .padding()
+                .border(.green)
+                
+                VStack{
+                    Text("AVAudioPlayer")
+                            .font(.largeTitle)
+                            .padding(.bottom, 10)
+                    List{
+                        ForEach(arrayofSounds, id: \.self) { sound in
+                            Button("Sonido: \(sound.name)"){
+                                soundPlayer.play(withURL: sound.getURL())
+                            }
                         }
                     }
+                    .frame(height: 180)
                 }
-                .frame(height: 180)
+                .padding()
+                .border(.green)
             }
-            .padding()
-            .border(.green)
         }
     }
 }

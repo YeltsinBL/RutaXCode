@@ -28,6 +28,8 @@ extension View{
 
 struct ContentThreeView: View {
     private let url = URL(string: "https://i.pinimg.com/564x/f0/45/82/f04582962fdbc32271ac6581d55c3e2f.jpg")
+    
+    @State private var rotationAngle = Angle.degrees(0)
     var body: some View {
         ScrollView (showsIndicators: false){
             VStack{
@@ -86,6 +88,34 @@ struct ContentThreeView: View {
 //
                     }
                     .newButtonModifierOptimizar()
+                }
+                .padding()
+                .border(.green)
+                VStack{
+                    Text("Rotation Gesture")
+                            .font(.largeTitle)
+                            .padding(.bottom, 10)
+                    Text("Gírame con dos dedos")
+                        .bold()
+                        .font(.title)
+                        .padding()
+                        .foregroundColor(.white)
+                        .frame(width: 360, height: 100)
+                        .background(.red)
+                        .cornerRadius(20)
+                        .rotationEffect(rotationAngle)
+                        .gesture(
+                            RotationGesture()
+                                .onChanged({ angle in
+                                    rotationAngle = angle
+                                })
+                                .onEnded({ value in
+                                    withAnimation {
+                                        rotationAngle = .degrees(0)
+                                    }
+                                })
+                        )
+                       
                 }
                 .padding()
                 .border(.green)

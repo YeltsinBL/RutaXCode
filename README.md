@@ -50,6 +50,7 @@ En `ContentThreeView` utilicé:
 - AsyncImage: para cargan imágenes dentro de la aplicación mediante una url.
 - GeometryReader: sirve para poder posicionar subvistas con un layout customizado mediante el parámetro GeometryProxy que nos da la posición y tamaño que ocupa el GeometryReader; también se puede hacer animaciones.
 - ViewModifier: para crear nuestras propias modificadores y poder reutilizarlos en los demás así se ahorra lineas de código repetidos. Primero se crea una `struct` de ViewModifier con devolverá una vista y luego hacemos una `extension` de la vista para optimizar más el código utilizando la struct creada anteriormente.
+- RotationGesture: para hacer girar un componente en angulos, mediante el `onChange` y para que regrese a su posicion el `onEnded`
 
 
 En `ImageView` agregue una imagen a los assets y utilice Símbolos SF, las propiedades de imagen que utilice fueron:
