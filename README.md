@@ -122,6 +122,12 @@ En `ReproduceView` utilicé:
 * VideoPlayer: importé AVKit para utilizarlo y reproducir vídeos por una URL, también  se puede hacer agregando un video al proyecto y asignando el nombre con la extensión.
 * AVAudioPlayer: se debe de importar el AVKit para utilizarlo, reproduce audio, en este caso, se agregó sonidos a la aplicación y se redirigió mediante la Url, ruta de acceso a los sonidos.
 
+En `MapTwoView` importé MapKit:
+* Creé un nuevo archivo `LocationViewModel` donde agregué latitud y longitud por defecto para cuando no se acepte el permiso; y a la vez agregué un delta que sirve como zoom.
+* Agregué dos variables `Published`, una para saber si se permitió el acceso a la ubicación y la otra para pasar la longitud y latitud a la view principal, ya sea dando o nó el permiso a la ubicación.
+* Una variable para administrar la locación tanto: en la presición, cuando pide el acceso a la ubicación y recibir la actualización de la localización del usuario.
+* Agregué una extensión del  `CLLocationManagerDelegate` para recibir la información del usuario cuando dé el permiso y detectar el cambio en el permiso de autorización.
+
 ## Importante
 ### Property Wrappers
 Los property wrappers utilizados en el listado para pasar datos a otra vista, actualizar y filtrar; fueron los siguientes:

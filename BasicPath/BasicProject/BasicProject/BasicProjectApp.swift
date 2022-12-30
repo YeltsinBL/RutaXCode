@@ -18,7 +18,8 @@ struct BasicProjectApp: App {
 //            BiometricAuthView()
 //            WebView()
 //            ContentTwoView()
-            ReproduceView()
+//            ReproduceView()
+            MapTwoView()
         }
     }
 }
