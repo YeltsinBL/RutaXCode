@@ -30,6 +30,8 @@ struct ContentThreeView: View {
     private let url = URL(string: "https://i.pinimg.com/564x/f0/45/82/f04582962fdbc32271ac6581d55c3e2f.jpg")
     
     @State private var rotationAngle = Angle.degrees(0)
+    @State private var scaleMG:CGFloat = 1.0
+    
     var body: some View {
         ScrollView (showsIndicators: false){
             VStack{
@@ -116,6 +118,35 @@ struct ContentThreeView: View {
                                 })
                         )
                        
+                }
+                .padding()
+                .border(.green)
+                VStack{
+                    Text("Magnification Gesture")
+                            .font(.largeTitle)
+                            .padding(.bottom, 10)
+                    Text("Estira y reduce con dos dedos")
+                        .bold()
+                        .font(.body)
+                        .padding()
+                        .foregroundColor(.white)
+                        .frame(width: 360, height: 100)
+                        .background(.red)
+                        .cornerRadius(20)
+                        .scaleEffect(scaleMG)
+                        .gesture(
+                            MagnificationGesture()
+                                .onChanged({ value in
+                                    scaleMG = value
+                                })
+                                .onEnded({ _ in
+                                    withAnimation {
+                                        scaleMG = 1.0
+                                    }
+                                })
+                        )
+                    Text("Valor del scale: \(scaleMG)")
+                        .padding(.top,20)
                 }
                 .padding()
                 .border(.green)

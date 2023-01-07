@@ -19,7 +19,8 @@ struct BasicProjectApp: App {
 //            WebView()
 //            ContentTwoView()
 //            ReproduceView()
-            MapTwoView()
+//            MapTwoView()
+            ContentThreeView()
         }
     }
 }
