@@ -117,6 +117,8 @@ En `ListDetailView`
 
 En `FormView` utilicé:
 * Section: donde agregué el Header y Footer para que de forma más intuitiva se vean los elementos.
+* Localizable: creé un nuevo fichero donde se agregarán palabras claves que contendrá el texto para la vista en el idioma especificado.
+* Localizations: agregué otro idioma a la aplicación para que cree otro fichero dentro de `localizable`, que se agregarán las palabras en el idioma seleccionado.
 
 En `ReproduceView` utilicé:
 * VideoPlayer: importé AVKit para utilizarlo y reproducir vídeos por una URL, también  se puede hacer agregando un video al proyecto y asignando el nombre con la extensión.

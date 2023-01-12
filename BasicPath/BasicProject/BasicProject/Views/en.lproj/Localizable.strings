@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  BasicProject
+
+  Created by YeltsinMacPro13 on 11/01/23.
+  
+*/
+"form-name-key" = "Name";
+"form-phone-user %@" = "User Phone %@ Mobile";
+"form-button-key" = "Accept";
+"form-alertmessage-key" = "Save information...";
+"form-header-key" = "Contact Form";
+"form-footer-key" = "* All the information will be kept confidential.";

@@ -20,7 +20,8 @@ struct BasicProjectApp: App {
 //            ContentTwoView()
 //            ReproduceView()
 //            MapTwoView()
-            ContentThreeView()
+//            ContentThreeView()
+            FormView()
         }
     }
 }
