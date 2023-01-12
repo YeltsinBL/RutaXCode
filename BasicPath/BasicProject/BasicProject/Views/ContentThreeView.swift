@@ -32,6 +32,20 @@ struct ContentThreeView: View {
     @State private var rotationAngle = Angle.degrees(0)
     @State private var scaleMG:CGFloat = 1.0
     
+    @GestureState var isDetectingLongPress = false
+    
+    var longPress: some Gesture{
+        LongPressGesture(minimumDuration: 5)
+            .updating($isDetectingLongPress){
+                currentState, gestureState, transaction in
+                gestureState = currentState
+                transaction.animation = .easeIn(duration: 5.0)
+            }
+            .onEnded { _ in
+                print("Dejo de presionar")
+            }
+    }
+    
     var body: some View {
         ScrollView (showsIndicators: false){
             VStack{
@@ -150,6 +164,22 @@ struct ContentThreeView: View {
                 }
                 .padding()
                 .border(.green)
+                VStack{
+                    Text("LongPressGesture")
+                            .font(.largeTitle)
+                            .padding(.bottom, 10)
+                    Text("Manten presionado para cambiar de color")
+                        .bold()
+                        .multilineTextAlignment(.center)
+                        .padding()
+                    Rectangle()
+                        .fill(self.isDetectingLongPress ? .green: .blue)
+                        .frame(width: 100, height: 100, alignment: .center)
+                        .gesture(longPress)
+                }
+                .padding()
+                .border(.green)
+//                .frame(height: 180)
             }
         }
     }

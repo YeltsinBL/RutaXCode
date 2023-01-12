@@ -52,6 +52,7 @@ En `ContentThreeView` utilicé:
 - ViewModifier: para crear nuestras propias modificadores y poder reutilizarlos en los demás así se ahorra lineas de código repetidos. Primero se crea una `struct` de ViewModifier con devolverá una vista y luego hacemos una `extension` de la vista para optimizar más el código utilizando la struct creada anteriormente.
 - RotationGesture: para hacer girar un componente en angulos, mediante el `onChange` y para que regrese a su posicion el `onEnded`
 - MagnificationGesture: para agrandar y reducir el tamaño de la vista, en este caso de un Text.
+- LongPressGesture: para poder realizar una acción cuando se tiene presionado una vista por un cierto tiempo, en este caso, se cambia el color de un cuadrado.
 
 En `ImageView` agregue una imagen a los assets y utilice Símbolos SF, las propiedades de imagen que utilice fueron:
 - Resizable: para que entre la imagen en todos los márgenes de la vista pero se deforma
